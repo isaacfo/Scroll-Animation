@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* vertically centered */
+  align-items: center;
+  /* horizontally centered, needs to have height to work */
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  margin: 0;
+}
+
+h1 {
+  margin: 10;
+}
+
+.box {
+  background-color: steelblue;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  /* display flex - justify content to center the h2 in the div/box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  overflow-x: hidden;
+  padding: 10px;
+  height: 200px;
+  width: 400px;
+  /* moves all the boxes off the screen */
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+/* selects every other box and puts them on the other side */
+.box:nth-last-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
